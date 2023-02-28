@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+    <script>
+        //first I want to create a drawing area of 500 x 500
+        var width = 500;
+        var height = 500;
+
+        //We have to specify which map projection we want to use to draw the map
+        //there are different projections see https://github.com/d3/d3-geo
+        var my_projection = d3.geoAlbersUsa().translate([width / 2, height / 2]).scale(500);
+
+        //specify the projection function that will be used for paths or region boundaries
+        var my_path = d3.geoPath().projection(my_projection);
+
+        d3.json('us-states.json').then(function(data) {
+
+            //we log the data to see how it look like or whether it is loaded
+            console.log(data);
+
+            //add the drawing area into the html body
+            var svg = d3.select('body').append('svg').attr('width', width).attr('height', height);
+
+            //draw the map regions
+            var mp = svg.selectAll('path')
+                .data(data.features) //get the features in the data
+                .enter() //loop through all the features 
+                .append('path') //for each path
+                .attr('d', my_path); //draw the path
+
+            mp.attr('fill', function(d, i) {
+                return 'rgb(0,255,' + i * 5 + ')';
+            });
+
+
+        });
+    </script>
+</body>
+
+</html>
