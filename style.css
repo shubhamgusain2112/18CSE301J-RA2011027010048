@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 * {
+    align-items: center;
+    text-align: center;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -89,9 +91,10 @@ nav .menu {
     border-radius: 1rem;
     background-color: black;
     align-items: center;
+    box-shadow: 0.2rem 0.2rem rgba(54, 78, 44, 0.368);
 }
 
-.center .sub_title {
+.center .subtitle {
     color: white;
     font-size: 3em;
     font-weight: 600;
@@ -108,25 +111,12 @@ nav .menu {
     outline: none;
     transition: all 0.3s ease;
     text-decoration: none;
+    background-color: white;
 }
 
-.center .btns button:hover {
-    background-color: rgba(72, 255, 0, 0.4);
-}
-
-.center .btns button:first-child {
-    color: #fff;
-    background: none;
-}
-
-.btns button:first-child:hover {
-    background: white;
-    color: black;
-}
-
-.center .btns button:last-child {
-    background: white;
-    color: black;
+.btns button:hover {
+    background-color: rgb(161, 255, 124);
+    color: white;
 }
 
 .Seperate {
@@ -150,4 +140,39 @@ nav .menu {
 
 .Bottom {
     margin-bottom: 3em;
+}
+
+.cards {
+    position: static;
+    align-items: center;
+    display: inline-block;
+    width: 70%;
+    background-color: black;
+    padding: 2em;
+    border-radius: 0.5em;
+    margin: 1rem;
+    box-shadow: 0.2rem 0.2rem rgba(54, 78, 44, 0.368);
+}
+
+.image img {
+    width: 100%;
+    border-radius: 0.5em;
+}
+
+.icon {
+    display: inline-block;
+}
+
+.icon img {
+    align-items: right;
+    height: 3rem;
+}
+
+.icons {
+    background-color: white;
+    border-radius: 1em;
+    box-shadow: 0.2rem 0.2rem rgba(54, 78, 44, 0.368);
+    padding: 1rem;
+    margin-left: 40%;
+    margin-right: 40%;
 }
